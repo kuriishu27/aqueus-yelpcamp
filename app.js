@@ -16,7 +16,8 @@ var commentRoutes = require('./routes/comments'),
     indexRoutes = require('./routes/index');
 
 mongoose.promise = global.Promise;
-mongoose.connect('mongodb://localhost/yelp_camp_v3');
+// mongoose.connect('mongodb://localhost/yelp_camp_v3');
+mongoose.connect('mongodb://accentPOS:AccentPOS123@cluster0-shard-00-00-dxgjl.mongodb.net:27017,cluster0-shard-00-01-dxgjl.mongodb.net:27017,cluster0-shard-00-02-dxgjl.mongodb.net:27017/Campgrounds?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
