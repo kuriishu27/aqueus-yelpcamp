@@ -5,15 +5,20 @@
     /*}*/
 
 #footer {
-    position:fixed;
+    position:relative;
     bottom:0;
     left:0;
     right:0;
     margin:0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 #delete-form {
     display:inline;
+}
+
+.form-style {
+    max-width:300px;
+    margin:10px auto;
 }

@@ -16,8 +16,7 @@ var commentRoutes = require('./routes/comments'),
     indexRoutes = require('./routes/index');
 
 mongoose.promise = global.Promise;
-// mongoose.connect('mongodb://localhost/yelp_camp_v3');
-mongoose.connect('mongodb://accentPOS:AccentPOS123@cluster0-shard-00-00-dxgjl.mongodb.net:27017,cluster0-shard-00-01-dxgjl.mongodb.net:27017,cluster0-shard-00-02-dxgjl.mongodb.net:27017/Campgrounds?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
+mongoose.connect('mongodb://admin:admin@ds123933.mlab.com:23933/yelpcamp');
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -28,6 +27,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(flash());
 
+
+// Use seedDB to create dummy test data files
 // seedDB(); // seed the database
 
 // PASSPORT CONFIGURATION
@@ -55,7 +56,8 @@ app.use(indexRoutes);
 app.use('/campgrounds', campgroundRoutes);
 app.use('/campgrounds/:id/comments', commentRoutes);
 
-
-app.listen(process.env.PORT, process.env.IP, function() {
+var PORT = 8080
+app.listen(process.env.PORT || PORT, process.env.IP, function() {
+    console.log(process.env.IP);
     console.log('YelpCamp server has started!');
 });

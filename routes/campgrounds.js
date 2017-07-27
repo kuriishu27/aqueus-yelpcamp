@@ -8,6 +8,7 @@ router.get('/', function(req, res) {
         if(err){
             console.log(err);
         } else {
+            console.log(res.locals.currentUser);
             res.render('campgrounds/index', {
                 campgrounds: allCampgrounds
             });

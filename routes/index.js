@@ -3,9 +3,6 @@ var router = express.Router({mergeParams: true});
 var passport = require('passport');
 var User = require('../models/user');
 
-var Campground = require('../models/campground');
-var Comment = require('../models/comment');
-
 router.get('/', function(req, res) {
     res.render('landing');
 });
