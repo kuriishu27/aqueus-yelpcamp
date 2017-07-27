@@ -55,4 +55,9 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
+<<<<<<< HEAD
 .env
+=======
+.env
+
+>>>>>>> 2e690a2... Initial commit
